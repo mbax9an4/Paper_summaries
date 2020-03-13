@@ -1,0 +1,66 @@
+# [Unsupervised Learning of Digit Recognition using Spike-Timing-Dependent Plasticity](https://www.frontiersin.org/articles/10.3389/fncom.2015.00099/full)
+
+**Authors**: Peter U. Diehl and Matthew Cook
+
+### Problem it addresses
+
+* Spiking neural networks (or SNNs) should be trained with procedures that deepen our understanding of how the neocortex is performing computations. In spite of the increased interest in biologically realistic learning rules, training SNNs remains a difficult task. 
+* Most training procedures rely on training in a rate-based network (i.e. classical neural network) and subsequently converting to an equivalent SNN.
+* Many training methods in literature place a disproportional focus on producing training procedures that model biological properties very well, at the loss of system size. The authors rightly state: "_understanding the computational principles of the neocortex needs both aspects, the biological plausibility and good performance on pattern recognition tasks. If we only focus on biological plausibility, even if we are able to develop functional systems, it is difficult to know which mechanisms are necessary for the computation, i.e., being able to copy the system does not necessarily lead to understanding. Similarly, if we focus only on good performance we will create systems that are working well but which also do not lead to a better understanding since they are too abstract to compare them to the computational primitives of real brains._"
+
+### Important terminology
+
+* __conductance-based synapse__: first proposed by  [Hodgkin and Huxley](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1392413/) these models represent current flow across the membrane to be due to charging of the membrane capacitance ($I_C$) and movement of ions across ion channels. Ion channels are selective for particular ionic species, such as sodium (Na) or potassium (K), giving rise to currents ($I_{Na}$ or $I_K$). Thus, the total membrane current, $I_m(t)$ , is the sum of the capacitive current and the ionic current.
+* __presynaptic trace__: models the recent presynaptic spike history.
+* __receptive fields__: the expected firing activity of neurons to different types (i.e. classes for a classification problem) of observations
+
+
+### Design observations/decisions
+
+* To increase the simulation speed the proposed architecture uses much fewer neurons (than biological systems). This however, leads to the network generating fewer input spikes which causes a general sparisity in the model.
+* The time constant of excitatory neurons ($\tau$) is greatly increased (compared to biologically realistic values). This is necessary to allow each neuron to better estimate the input spike rate, by observing more input spikes. 
+* The network architecture consists of two layers. The first layer is the input layer, containing 28 × 28 neurons (one neuron per MNIST image pixel), and the second layer is the processing layer, containing a variable number of excitatory neurons and as many inhibitory neurons. 
+* Each input is a Poisson spike-train, which is fed to the excitatory neurons of the second layer. The rates of each neuron are proportional to the intensity of the corresponding pixel in the example image.
+* The excitatory neurons of the second layer are connected in a one-to-one fashion to inhibitory neurons, i.e., each spike in an excitatory neuron will trigger a spike in its corresponding inhibitory neuron. Each of the inhibitory neurons is connected to all excitatory ones, except for the one from which it receives a connection.
+* The ratio between inhibitory and excitatory synaptic conductance has to be balanced to ensure that lateral inhibition is neither too weak, which would mean that it does not have any influence, nor too strong, which would mean that once a winner was chosen that winner prevents other neurons from firing.
+* To increase simulation speed the weight dynamics are computed using synaptic traces. So, in addition to the synaptic weight, each synapse keeps track of the presynaptic trace as well.
+* __Input encoding__:
+  * simulation interval is 350ms
+  * the rates for generating the Poisson distributed spike trains are proportional to the intensity of the pixels divided by 4
+  * if less than 5 spikes are produced by excitatory neurons, the input firing rates are increased by 1 and the example is simulated again, until at least 5 spikes are produced
+  * after training, most models are very sparse (small spike counts are recorded across the population of excitatory neurons)
+* __Establishing target and excitatory neuron association__: 
+  * once training is done, 150ms are simulated with no input to allow the neural parameters to revert to their resting values
+  * the training examples are simulated with the frozen weights and final adaptive thresholds
+  * each neuron is assigned to the class for which it has produced the highest number of spikes
+* __Interpretation method__:
+  * for each class the spike counts of each neuron associated with said class are averaged
+  * the class with the highest average firing rate is predicted 
+
+### Benefits of method
+
+* The method improves upon an existing method porposed by [Querlioz](https://ieeexplore.ieee.org/abstract/document/6508962), using a similar architecture (LIF neurons, STDP, lateral inhibition and intrinsic plasticity) but, replacing certain components with more biologically realistic ones: condictance based synapses, different STDP rules and exponential time dependence of the weight change.
+* 
+
+### Contributions
+
+* Proposes a mechanism for training SNNs using mechanisms with increased biological plausibility 
+  * conductance-based instead of current-based synapses
+  * spike-timing-deoendent plasticity with time-dependent weight change 
+  * lateral inhibition 
+  * an adaptive spiking threshold
+* The performance of the trained model:
+  *  scales well with the number of neurons used (indicating that the model is not heavily reliant on finding a suitable architecture for a problem)
+  *  shows similar performance for four different learnign rules (indicating robustness of the full combination mechanisms)
+* The connectivity pattern between excitatory and inhibitory neurons provides lateral inhibition and leads to competition among excitatory neurons. This ensures that excitatory neurons will learn to recognise different classes (this is especially important as the method is unsupervised). 
+* The method uses an exponential time dependence learning rule, increasing biological realism.
+* To ensure that irrelevant inputs are disconnected the learning rule includes an offset (implemented both through the trace and by considering the dependence of the update on the previous weight). The effect of this is: the higher the target value, the lower the synaptic weight will be. So presynaptic neurons that rarely lead to spikes form the postsynpatic neuron become increasingly less important.
+* Three other learning rule variantes are tested as well:
+  * adds an exponential weight dependence to the trace
+  * adds a postsynaptic trace which is also considered for weight updates
+  * the weights were learnt using the triplet STDP rule (with a divisive weight normalization to ensure an equal use or neurons)
+* __Homeostasis__: 
+  * inhomogeneity of the input and lateral inhibition leads to excitatory neurons producing significantly different firing rates
+  * however it is desirable for neurons to produce approximately equal firing rates (on average, across a dataset) so that no single neuron dominates the response pattern and to ensure that the receptive fields of neurons differentiate
+  * to address this issue an __adaptive membrane threshold__ is used during training (this resembles intrinsic plasticity)
+    * the effect is that the more a neuron fires the higher its threshold becomes, so that in the future the neuron would require much more input to produce spikes
