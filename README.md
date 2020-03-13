@@ -4,4 +4,4 @@
 
 ## Training Spiking Neural Networks
 
-* [](unsup_stdp_excit_inhib_population_training.md)
+* [x] [Unsupervised Learning of Digit Recognition using Spike-Timing-Dependent Plasticity](unsup_stdp_excit_inhib_population_training.md)
