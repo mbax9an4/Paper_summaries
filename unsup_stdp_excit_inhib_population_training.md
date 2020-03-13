@@ -37,12 +37,11 @@
   * for each class the spike counts of each neuron associated with said class are averaged
   * the class with the highest average firing rate is predicted 
 
-### Benefits of method
+### Contributions
+
+![Proposed architecture](diagrams/unsup_stdp_excit_inhib_population_training.png)
 
 * The method improves upon an existing method proposed by [Querlioz](https://ieeexplore.ieee.org/abstract/document/6508962), using a similar architecture (LIF neurons, STDP, lateral inhibition and intrinsic plasticity) but, replacing certain components with more biologically realistic ones: conductance based synapses, different STDP rules and exponential time dependence of the weight change.
-* 
-
-### Contributions
 
 * Proposes a mechanism for training SNNs using mechanisms with increased biological plausibility 
   * conductance-based instead of current-based synapses
