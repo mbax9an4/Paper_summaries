@@ -9,3 +9,6 @@
 ## Ensembles of Spiking Neural Networks
 
 * [x] [STDP-Based Unsupervised Multimodal Learning With Cross-Modal Processing in Spiking Neural Network](snn_ensemble_multi_modal_application.md)
+* [x] [Wide Learning](snn_ensemble_wide_learning.md)
+* [x] [EnsembleSNN: Distributed Assistive STDP Leanring for Energy-Efficient Recognition in Spiking Neural Networks](snn_ensemble_EnsembleSNN.md)
+* [x] [Unsupervised Learning in an Ensemble of Spiking Neural Networks Mediated by ITDP](snn_ensemble_itdp_ensemble.md)
