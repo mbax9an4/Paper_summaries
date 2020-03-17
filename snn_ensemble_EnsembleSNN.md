@@ -8,7 +8,7 @@
 * The architecture is offered as a potential solution for "reducing the crossbar size imposed limitations on dedicated crossbar-based neuromorphic designs for energy-efficient realization of SNNs".
 
 ### Design observations/decisions
-* Connections between the input layer and excitatory neurons are trained using unsupervised STDP.
+* Connections between the input layer and excitatory neurons are trained using the unsupervised STDP procedure introduced by [Diehl et.al.](https://www.frontiersin.org/articles/10.3389/fncom.2015.00099/full).
 * Once the weights bteween the input and excitatory neurons have been trained, they are frozen and:
   * The training dataset is presented again, providing the targets as well this time
   * Each excitatory neuron is assigned a class, based on the class of the input example for which it has produced the most spikes
@@ -28,4 +28,5 @@
 ![Proposed architecture](diagrams/ensembleSNN.png)
 * In addition to being able to train the smaller networks in paralel, the number of connections to be trained is naturally smaller, leading to smaller individual training times.
 * As each model sees only a small part of the input, lateral (called predictive in this paper) connections are added between the members of the ensemble to facilitate communication about unseen areas of the input across all members.
-* "Besides serving as a mechanism to combine the outputs of the individual ensembles into an overall  classification, the predictive connections also improve the generalization ability of the EnsembleSNN.  Since each ensemble has less number of excitatory neurons, the capability of the individual ensembles to learn more distinct patterns from the training data also reduces. This will affect the accuracy of the  EnsembleSNN. However, the addition of the predictive connections tends to guide the learning in the individual ensembles such that each ensemble learns more generic representations of the decomposed input space improving the combined classification decision."
+* "Besides serving as a mechanism to combine the outputs of the individual ensembles into an overall classification, the predictive connections also improve the generalization ability of the EnsembleSNN. Since each ensemble has less number of excitatory neurons, the capability of the individual ensembles to learn more distinct patterns from the training data also reduces. This will affect the accuracy of the EnsembleSNN. However, the addition of the predictive connections tends to guide the learning in the individual ensembles such that each ensemble learns more generic representations of the decomposed input space improving the combined classification decision."
+  * Alternatively it is possible that the individual models overfit to the local features of the input subdomain, and that when the predictions are combined the individual bias is reduced by the model disagreement (not explicitly as combinations with the Ambiguity Decomposition do, but implicitly), resulting in a more accurate predictor. 
