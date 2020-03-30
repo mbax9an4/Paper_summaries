@@ -23,7 +23,6 @@
 * "For the controlled feature subsets, two Gaussian distribution schemes were tested, being systematically investigated for various ensemble sizes NE. These schemes are reminiscent of basic biological topographic sensory receptive fields/features. In order to promote diversity of input patterns for ensemble members, each distribution was designed to enable pixels to be drawn from different regions of the image, and for each ensemble WTA to receive projections from different input neurons, corresponding to the selected pixel subsets. Hence each of the SEM classifiers in the ensemble received its inputs from a different region of the image as defined by the distributions."
 	* "The results show that the ensemble systems using the Gaussian feature selection schemes both outperform, to a similar degree, random selection and that the final performances increase (i.e. NCE decreases)with ensemble size in all cases."
 
-
 ### Contributions
 
 ![Proposed architecture](diagrams/itdp_ensemble.png)

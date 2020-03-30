@@ -1,0 +1,15 @@
+Selecting Weighting Factors in Logarithmic Opinion Pools
+
+Tom Heskes, 1998
+
+* Extends the scenario of optimizing a model's parameters using squared loss and combining model predictions using an artihmetic mean to minimizing the likelihood of the Kullback-Leibler divergence and combining model predictions using a logarithmic averaging of the probability statements (i.e. logarithmic opinion pools)
+* The main contribution is showing that the Bias-Variance decomposition and model averaging is not restricted to squared loss and prediction averaging, "but applies to the combination of probability statements of any kind as long as the KL divergence plays the role of the error measure."
+    * "In this paper, we generalize the regression case to the combination of probability statements of any kind."
+* Knowing that: "Minimizing the sum-squared error is equivalent to maximizing the loglikelihood of the training data under the assumption that a network output can be interpreted as an estimate of the mean of a Gaussian distribution with fixed variance." The authors then suggest that: "In these probabilistic terms, a linear averaging of network outputs corresponds to a logarithmic rather than linear averaging of probability statements."
+* They define the ensemble model to be the closest to the model estimate destributions, on average, and show that solving that leads to the ensemble model being a geometric mean (assuming the models are uniformly weighted) of the model distributions, normalized over all realizations of y
+* They then show how the error of the ensemble constructed such that it satisfies the property above can be decomposed in terms of the average model divergence and the average ambiguity of the models
+    * "Since the ambiguity A is always larger than or equal to zero, we conclude that the Kullback-Leibler divergence of the logarithmic opinion pool is never larger than the average Kullback-Leibler divergences of individual experts."
+    * "by using Jensen's inequality, it is also possible to show that the Kullback-Leibler divergence of the linear opinion pool is smaller or equal to the average Kullback-Leibler divergences of individual experts."
+* If the model and the ensemble are defined as distributions with exponential families, the authors show that the parameters of the ensemble distribution can be expressed as a weighted average of the parameters of the model distributions
+* If the models are assigned non-uniform weights these parameters can be estimated using quadratic programming and imposing several restrictions on the parameters.
+    * The solution of the quadratic programming problem usually ends up at the edge of the unit cube with many weighting factors equal to zero. On the one hand, this is a benecial property, since it implies that we only have to keep a relatively small number of models for later processing.

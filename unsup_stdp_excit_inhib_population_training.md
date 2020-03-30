@@ -1,6 +1,6 @@
 # [Unsupervised Learning of Digit Recognition using Spike-Timing-Dependent Plasticity](https://www.frontiersin.org/articles/10.3389/fncom.2015.00099/full)
 
-**Authors**: Peter U. Diehl and Matthew Cook
+**Authors**: Peter U. Diehl and Matthew Cook, 2015
 
 ### Problem it addresses
 

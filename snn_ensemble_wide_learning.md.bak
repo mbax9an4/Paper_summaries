@@ -18,5 +18,5 @@
 * The activity of each network is interpreted using SOMs as:
   * summing over all action potentials at a given time point (collective)
   * using a binary set of vectors that track each output neuron throughout time (individual)
-* Correctness of pattern classification is computed by estimating a score at both levels of abstraction:
-  * sum over the all nodes in the SOM, where for each node we compute the sum of the instances of the most common pattern in the node, normalized by the total number of patterns in the SOM and multiplied by the probability of the patterns in the current node (number of patterns in the node/total number of patterns)
+* Corectness of pattern classification is computed by estimating a score at both levels of abstraction:
+  * sum over the all nodes in the SOM, where for each node we compute the sum of the instances of the most common pattern in the node, normalized by the total number of patterns in the SOM and multiplied by the probablity of the patterns in the current node (number of patterns in the node/total number of patterns)

@@ -1,4 +1,4 @@
-# [EnsembleSNN: Distributed Assistive STDP Learning for Energy-Efficient Recognition in Spiking Neural Networks](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7966177)
+# [EnsembleSNN: Distributed Assistive STDP Leanring for Energy-Efficient Recognition in Spiking Neural Networks](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7966177)
 
 **Authors**:  Priyadarshini Panda, Gopalakrishnan Srinivasan and Kaushik Roy 
 
@@ -9,7 +9,7 @@
 
 ### Design observations/decisions
 * Connections between the input layer and excitatory neurons are trained using the unsupervised STDP procedure introduced by [Diehl et.al.](https://www.frontiersin.org/articles/10.3389/fncom.2015.00099/full).
-* Once the weights between the input and excitatory neurons have been trained, they are frozen and:
+* Once the weights bteween the input and excitatory neurons have been trained, they are frozen and:
   * The training dataset is presented again, providing the targets as well this time
   * Each excitatory neuron is assigned a class, based on the class of the input example for which it has produced the most spikes
   * Once all excitatory neurons have been associated with one class, the lateral connections are established as follows:

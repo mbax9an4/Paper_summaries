@@ -1,0 +1,26 @@
+Neural Network Ensembles 
+
+LARS KAI HANSEN AND PETER SALAMON
+
+* They propose ensembles as a means for improving the training and generalization of neural networks.
+* Cross-validation is used for tuning the parameters. In each cross-validation iteration the neural networks are trained on the same batch of training examples and validated on the same hold-out set.
+* They argue that many factors can contribute to a model optimizing to a different local minima. Among these factors they list: training data, parameter initialization
+* The objective for the tuning phase of the project is rather the sum of squared deviations between the outputs obtained for the training set and the outputs produced by the network. Either objective suffers from the problem of many local minima.  
+* "The most powerful voting rule appears to be plurality in which the collective decision is the classification reached by more networks than any other" (this is a modern interpretation of majority voting, assign the class with the most votes regardless of whether more than half the models agree). "Simpler to analyze is the majority voting rule which chooses the classification made by more than half the networks. When there is no agreement among more than half the networks, the result is considered an error. Note that a correct decision by majority is perforce a correct decision by plurality."
+* They compute the likelihood of the majority vote predicting the incorrect class by computing the likelihood of seeing exactly k errors from the n models being trained.
+* Then the show that the more networks are used the smaller the likelihood of the majority vote combiner making an error is.
+* We proceed by adopting what we will refer to as the assumption of ‘‘random errors. ” Specifically, we assume
+that when an error in classification occurs, the incorrectly
+identified output is chosen with equal likelihood from
+among the M - 1 remaining possible classifications. The
+exact value of M appropriate to a certain analysis then
+becomes a parameter which we call the effective “degree
+of confusion. ” 
+* The dominant cause for dependence among errors in
+classification is the fact that a specific input has an associated difficulty independent of which network is doing
+the classification
+* The aim is to estimate the likelihood of an ensemble of making correct/incorrect classifications when using the majority voting, and plurality combination rule. Thus they are trying to determine whether an ensemble can be relied upon to generally perform better than a single model.
+* By modelling the likelihood of models making different mistakes they are trying to offer a mathematical model for quantifying the diversity of an ensemble.
+* "The basic conclusion of the present paper is that using
+an ensemble of neutral networks with a plurality consensus scheme can be expected to perform far better than
+using a single copy."
