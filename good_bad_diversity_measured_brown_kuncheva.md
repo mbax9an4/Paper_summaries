@@ -1,6 +1,6 @@
-“Good” and “Bad” Diversity in Majority Vote Ensembles
+# [``Good" and ``Bad" Diversity in Majority Vote Ensembles](https://link.springer.com/chapter/10.1007/978-3-642-12127-2_13)
 
-Gavin Brown and Ludmila I. Kuncheva, 2010
+**Authors**: Gavin Brown and Ludmila I. Kuncheva
 
 * "In this work we adopt the perspective that a diversity measure should be naturally defined as a consequence of two decisions in the design of the ensemble learning problem: the choice of error function, and the choice of combiner function."
 * "for particular choices of error/combiner function, a definition of diversity naturally emerges."

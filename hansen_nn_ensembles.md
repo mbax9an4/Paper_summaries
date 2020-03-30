@@ -1,6 +1,6 @@
-Neural Network Ensembles 
+# [Neural Network Ensembles](https://ieeexplore.ieee.org/document/58871) 
 
-LARS KAI HANSEN AND PETER SALAMON
+**Authors**: LARS KAI HANSEN AND PETER SALAMON
 
 * They propose ensembles as a means for improving the training and generalization of neural networks.
 * Cross-validation is used for tuning the parameters. In each cross-validation iteration the neural networks are trained on the same batch of training examples and validated on the same hold-out set.

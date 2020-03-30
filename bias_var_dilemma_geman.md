@@ -1,6 +1,6 @@
-Neural Networks and the Bias-Variance Dilemma
+# [Neural Networks and the Bias-Variance Dilemma](http://www.dam.brown.edu/people/geman/Homepage/Essays%20and%20ideas%20about%20neurobiology/bias-variance.pdf)
 
-Stuart Geman, Elie Bienenstock, and Rene Doursat, 1992
+**Authors**:  Stuart Geman, Elie Bienenstock, and Rene Doursat
 
 * They suggest that the fundamental challenges in neural modelling are related to representation rather than learning.
 * They show that neural network models can be formulated as nonlinear regression problems.

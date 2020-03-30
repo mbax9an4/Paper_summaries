@@ -1,6 +1,6 @@
-Selecting Weighting Factors in Logarithmic Opinion Pools
+# [Selecting Weighting Factors in Logarithmic Opinion Pools](https://papers.nips.cc/paper/1413-selecting-weighting-factors-in-logarithmic-opinion-pools.pdf)
 
-Tom Heskes, 1998
+**Authors**: Tom Heskes
 
 * Extends the scenario of optimizing a model's parameters using squared loss and combining model predictions using an arithmetic mean to minimizing the likelihood of the Kullback-Leibler divergence and combining model predictions using a logarithmic averaging of the probability statements (i.e. logarithmic opinion pools)
 * The main contribution is showing that the Bias-Variance decomposition and model averaging is not restricted to squared loss and prediction averaging, "but applies to the combination of probability statements of any kind as long as the KL divergence plays the role of the error measure."

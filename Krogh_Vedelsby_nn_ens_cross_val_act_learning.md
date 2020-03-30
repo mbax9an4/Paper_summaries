@@ -1,6 +1,6 @@
-Neural Network Ensembles, Cross Validation, and Active Learning 
+# [Neural Network Ensembles, Cross Validation, and Active Learning](https://papers.nips.cc/paper/1001-neural-network-ensembles-cross-validation-and-active-learning.pdf) 
 
-Anders Krogh and Jesper Vedelsby 
+**Authors**: Anders Krogh and Jesper Vedelsby 
 
 * Learning of continuous valued functions using neural network ensembles (committees) can give improved accuracy, reliable estimation of the generalization error, and active learning.
 * "A combination of the output of several networks (or other predictors) is only useful
