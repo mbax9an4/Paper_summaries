@@ -5,6 +5,7 @@
 ## Training Spiking Neural Networks
 
 * [x] [Unsupervised Learning of Digit Recognition using Spike-Timing-Dependent Plasticity](unsup_stdp_excit_inhib_population_training.md)
+* [x] [Deep Learning in Spiking Neural Networks](snn_survey_deep_architecture_learning.md)
 
 ## Ensembles of Spiking Neural Networks
 
@@ -26,3 +27,11 @@
 ## Supervised Learning theory
 
 * [x] [Neural Networks and the Bias-Variance Dilemma](bias_var_dilemma_geman.md)
+
+## Neural network architectures
+
+* [x] [Powerful, transferable representations for molecules through intelligent task selection in deep multitask networks](weave_set2set_clyde.md)
+
+## Representation learning
+
+* [x] [TASK2VEC: Task Embedding for Meta-Learning](task2vec.md)
