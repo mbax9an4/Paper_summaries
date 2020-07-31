@@ -6,6 +6,8 @@
 
 * [x] [Unsupervised Learning of Digit Recognition using Spike-Timing-Dependent Plasticity](unsup_stdp_excit_inhib_population_training.md)
 * [x] [Deep Learning in Spiking Neural Networks](snn_survey_deep_architecture_learning.md)
+* [x] [Hybrid Macro/Micro Level Backpropagation for Training Deep Spiking Neural Networks](dsnn_backprop_macro_micro.md)
+* [x] [Spike-Train Level Backpropagation for Training Deep Recurrent Spiking Neural Networks](st_rsbp_2019.md)
 
 ## Ensembles of Spiking Neural Networks
 
@@ -30,7 +32,7 @@
 
 ## Neural network architectures
 
-* [x] [Powerful, transferable representations for molecules through intelligent task selection in deep multitask networks](weave_set2set_clyde.md)
+* [x] [Powerful, transferable representations for molecules through intelligent task selection in deep multitask networks](weave_set2set_fare.md)
 
 ## Representation learning
 
