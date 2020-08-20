@@ -51,10 +51,13 @@
 where \hat{\alpha} is a function of exact spike timings, estimated from the values of e_{i|j}^k, o_j^k, and o_i^k computed during the previous training update.
 
 ## Experimental setup and results
-* Experimental setup: 
+* _Experimental setup_: 
     * model weights are randomly initialized using a Normal distribution,
     * models are trained for 200 iterations (50 on TI46)
     * the average and the best accuracy are reported, 
     * error bars are computed over 5 repeats.
-* Datasets: MNIST, N-MNIST (neuromorphic version of MNIST), EMNIST (Extended MNIST-Balanced, which includes both letters and digits), TI46 Speech corpus, 
-* Architectures: Fully connected SNNs, Spiking CNNs, 
+* _Datasets_: MNIST, N-MNIST (neuromorphic version of MNIST), EMNIST (Extended MNIST-Balanced, which includes both letters and digits), TI46 Speech corpus, 
+* _Architectures_: Spiking MLPs, Spiking CNNs.
+* _Results_: The accuracy recorded for models trained on the datasets specified outperformed the previous state-of-the-art results.
+
+Code is available [online](https://github.com/jinyyy666/mm-bp-snn).
