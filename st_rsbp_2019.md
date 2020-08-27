@@ -42,27 +42,27 @@
 * The (normalized) S-PSP (defined as e_{ij}) from neuron j to neuron i is defined as: the accumulated contributions of the spikes produced by a pre-synaptic neuron j to the (normalized) post-synaptic potential of neuron i (right before spikes are produced in neuron i).
 * S-PSPs are described as: the measure that enables the inclusion of temporal dynamics and recurrent connections of an RSNN (across all firing events at the spike train level) without needing to unfold the connections in time and backpropagate over individual time points.
 * The total post-synaptic potential, or T-PSP is the sum of weighted S-PSPs over all pre-synaptic neurons of neuron i.
-![T-PSP and the relationship between the output firing count of a post-synpatic neuron and its T-PSP.](diagrams/(1))
+![T-PSP and the relationship between the output firing count of a post-synpatic neuron and its T-PSP.](diagrams/st_rsbp_1.png)
 
 * The above diagram defines the relationship between the T-PSP (a_i) of a neuron i and its firing count o_i, via the firing threshold. 
 * Relating the diagram to terminology of a traditional MLP, a_i and o_i can be interpreted as the pre-activation and post-activation values respectively, and g() acts as the activation function.
 
 ## ST-RSBP
 * The T-PSP of a neuron l in a layer with index k+1 is defined as:
-![Spike train activation and spike count of a neuron l in layer k+1.](diagrams/(2))
+![Spike train activation and spike count of a neuron l in layer k+1.](diagrams/st_rsbp_2.png)
 * In the above diagram T-PSP takes into account the feedforward connections (with weight w_{lj}^{k+1}) and the recurrent connections (weighted by w_{lp}^{k+1}) of neuron l.
 * The loss to be minimized is a rate-coded MSE between the expected firing counts (as defined for the target label, in vector y) and the actual firing counts (vector o):
-![Loss function.](diagrams/(3))
+![Loss function.](diagrams/st_rsbp_3.png)
 * Differentiating the loss produces:
-![The back propagated error and the differentiation of activation terms.](diagrams/(4))
+![The back propagated error and the differentiation of activation terms.](diagrams/st_rsbp_4.png)
 * Where the back propagated error at the output layer is given by:
-![Loss function.](diagrams/(5))
+![Gradient for the output layer.](diagrams/st_rsbp_5.png)
 * While at the hidden (feedforward) layers after the chain rule is applied the back propagated error is:
-![Loss function.](diagrams/(6))
+![Gradient for the hidden layers.](diagrams/st_rsbp_6.png)
 * And the hidden layers gradient for the recurrent connections is computed as:
-![Loss function.](diagrams/(10))
+![Gradient for recurrent hidden layers.](diagrams/st_rsbp_7.png)
 * The weights are updated by:
-![Weight update.](diagrams/(top page 5 delta w))
+![Weight update.](diagrams/st_rsbp_8.png)
 
 ## Neuron model
 * The authors mention that the neuron model is "based on the LIF model", this likely means that the SRM model is used, though this is not explicitly specified.
