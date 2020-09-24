@@ -1,6 +1,7 @@
 ## Deep Learning Regularization Methods:
 
 * [x] [Batch Normalization](batch_norm.md)
+* [x] [Supervised autoencoders: Improving generalization performance with unsupervised regularizers](autoencoder_regularization_loss_2018.md)
 
 ## Training Spiking Neural Networks
 
@@ -8,6 +9,7 @@
 * [x] [Deep Learning in Spiking Neural Networks](snn_survey_deep_architecture_learning.md)
 * [x] [Hybrid Macro/Micro Level Backpropagation for Training Deep Spiking Neural Networks](dsnn_backprop_macro_micro.md)
 * [x] [Spike-Train Level Backpropagation for Training Deep Recurrent Spiking Neural Networks](st_rsbp_2019.md)
+* [x] [SLAYER: Spike Layer Error Reassignment in Time](slayer_2018.md)
 
 ## Ensembles of Spiking Neural Networks
 
