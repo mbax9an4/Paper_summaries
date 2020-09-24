@@ -20,16 +20,16 @@
 
 ### Terminology
 * knowledge graph: graph of entities identified in a body of text and the relations between those entities, as described in the text.
-* entity: 
+* entity: high level fact
 * canonical concept: 
 * mention-level supervision: individual instances of entities and relations are identified and demarcated in text.
 * distant supervision: encode global properties about entities and their relationships without identifying specific textual instances of them.
-* token: 
+* token: small unit text is split into (word or sentence)
 * mention: context informed hidden representation for a word in a document (i.e. the output of the transformer text encoder model given a tokenized word).
-* tfidf vector:
-* ngram:
-* unigram: 
-* bigram: 
+* tfidf vector: term frequency–inverse document frequency. Is a numerical statistic that is intended to reflect how important a word is to a document in a collection or corpus. It is often used as a weighting factor in searches of information retrieval, text mining, and user modeling. The tf–idf is the product of two statistics, term frequency and inverse document frequency. There are various ways for determining the exact values of both statistics.
+* ngram: a contiguous sequence of n items from a given sample of text or speech. The items can be phonemes, syllables, letters, words or base pairs according to the application. 
+* unigram: an n-gram of size 1
+* bigram: ngram of size 2
 
 ### Simultaneous Neural Entity-Relation Linker - SNERL steps
 ![Overview of the SNERL model.](diagrams/snerl_overview.png)
